@@ -13,10 +13,8 @@ public class ScreenCapture {
 		int count = 0;
 		Robot robot = new Robot();
 		Rectangle screenRect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
-		BufferedImage screenFullImage = robot.createScreenCapture(screenRect);
-
 		while (count < 20) {
-
+			BufferedImage screenFullImage = robot.createScreenCapture(screenRect);
 			ImageIO.write(screenFullImage, "jpg", new File("file" + ++count + ".jpg"));
 			Thread.sleep(2000);
 		}
